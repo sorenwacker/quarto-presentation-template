@@ -1,0 +1,9 @@
+.quarto
+_site
+docs
+
+*out
+*err
+
+*lightning_logs
+

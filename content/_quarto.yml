@@ -1,0 +1,16 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Presentation"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+
+format:
+  revealjs:
+    smaller: true
+    scrollable: true
+    chalkboard: true

@@ -1,0 +1,22 @@
+# The Docker image that will be used to build your app
+
+image: ubuntu:22.04
+
+variables:
+  UBUNTU_VERSION: "22.04"
+  QUARTO_VERSION: "1.3.361"
+
+before_script:
+  - apt-get update && apt-get -y install curl
+  - curl -L -o ./quarto.deb https://github.com/quarto-dev/quarto-cli/releases/download/v${QUARTO_VERSION}/quarto-${QUARTO_VERSION}-linux-amd64.deb
+  - dpkg -i ./quarto.deb && rm -f ./quarto.deb
+  - quarto install --no-prompt extension quarto-ext/lightbox
+
+pages:
+  script:
+    - quarto render ./content --output-dir=../public/
+  artifacts:
+    paths:
+      - public/
+  only:
+    - main
