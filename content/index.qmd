@@ -1,0 +1,107 @@
+---
+title: "Professional Presentation"
+subtitle: "Creating Polished Slides with Quarto"
+author: "Your Name"
+date: today
+date-format: "MMMM D, YYYY"
+format:
+  revealjs:
+    theme: [default, custom.scss]
+    logo: "https://quarto.org/favicon.png"  # Use default Quarto logo or replace with your own
+    footer: "Your Organization | Professional Presentation"
+    transition: slide
+    slide-number: true
+    preview-links: auto
+    code-fold: true
+    incremental: true
+    navigation-mode: vertical
+    title-slide-attributes:
+      data-background-color: "#2C3E50"
+editor: visual
+---
+
+## Introduction
+
+::: {.incremental}
+- Professional presentations require **clear structure** and **visual appeal**
+- Quarto provides powerful tools for creating beautiful slides
+- This presentation will demonstrate key features
+:::
+
+::: {.notes}
+Speaker notes go here. These are visible to you during the presentation but not to the audience.
+:::
+
+## Two-Column Layout
+
+:::: {.columns}
+
+::: {.column width="50%"}
+### Left Column
+- Content organized in columns
+- Makes efficient use of space
+- Perfect for comparisons
+:::
+
+::: {.column width="50%"}
+### Right Column
+```{r}
+#| echo: true
+#| eval: true
+#| fig-width: 6
+#| fig-height: 4
+
+# Basic R plot
+x <- 1:10
+y <- x^2
+plot(x, y, type = "b", 
+     main = "Simple Plot",
+     xlab = "X", ylab = "Y")
+```
+:::
+
+::::
+
+## Visual Styling
+
+You can enhance your text with different styles:
+
+- **Bold text** for emphasis
+- *Italic text* for subtle emphasis
+- <span style="color: blue;">Colored text</span> for visual cues
+- <span style="background-color: yellow;">Highlighted text</span> for important points
+
+## Important Information
+
+::: {.callout-important}
+### Key Point
+Always ensure your presentation is accessible and readable!
+:::
+
+::: {.callout-tip}
+### Pro Tip
+Use consistent colors and fonts throughout your presentation.
+:::
+
+## Tables and Lists
+
+### Structured Data
+
+| Feature | Description | Benefit |
+|---------|-------------|---------|
+| Themes  | Pre-designed visual styles | Consistent look |
+| Layouts | Flexible content arrangement | Better organization |
+| Formats | Multiple output options | Adaptability |
+
+### Process Steps
+
+1. Plan your content
+2. Structure your slides
+3. Apply professional styling
+4. Practice your delivery
+
+## Thank You!
+
+### Contact Information
+- Email: your.email@example.com
+- Website: www.example.com

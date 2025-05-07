@@ -1,0 +1,162 @@
+/*-- scss:defaults --*/
+// Import fonts
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap');
+
+// Colors
+$body-bg: #fff;
+$body-color: #333;
+$link-color: #0072B2;
+$selection-bg: #0072B2;
+
+// Fonts
+$font-family-sans-serif: 'Source Sans Pro', sans-serif;
+$presentation-heading-font: 'Montserrat', sans-serif;
+$presentation-heading-color: #2C3E50;
+$presentation-font-size-root: 28px;
+
+// Slide
+$presentation-slide-text-align: left;
+$presentation-title-slide-text-align: left;
+$border-color: #dee2e6;
+$code-block-bg: #f8f9fa;
+
+/*-- scss:rules --*/
+
+// Custom classes
+.text-red {
+  color: #E64A19 !important;
+}
+
+.bg-yellow {
+  background-color: rgba(255, 222, 89, 0.3);
+  padding: 0 0.2em;
+  border-radius: 4px;
+}
+
+.underline {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-decoration-color: $link-color;
+}
+
+// Section headings
+.reveal h1 {
+  font-weight: 700;
+  margin-bottom: 0.5em;
+}
+
+.reveal h2 {
+  font-weight: 600;
+  margin-bottom: 0.5em;
+  border-bottom: 1px solid $border-color;
+  padding-bottom: 0.2em;
+}
+
+.reveal h3 {
+  font-weight: 500;
+  color: #3a6ea5;
+}
+
+// Title slide
+#title-slide {
+  .title {
+    font-size: 2.5em;
+    font-weight: 700;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  }
+  
+  .subtitle {
+    font-size: 1.5em;
+    color: white;
+    font-weight: 400;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  }
+  
+  .author, .date {
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  }
+}
+
+// Callout boxes
+.callout {
+  border-radius: 4px;
+  padding: 1em;
+  margin-bottom: 1em;
+}
+
+.callout-important {
+  background-color: #f8d7da;
+  border-left: 5px solid #dc3545;
+  
+  h3 {
+    color: #721c24;
+    margin-top: 0;
+  }
+}
+
+// Code blocks
+.reveal pre {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+}
+
+// Quotes
+blockquote {
+  border-left: 5px solid #0072B2;
+  padding-left: 1em;
+  font-style: italic;
+  color: #555;
+}
+
+// Footer
+.reveal .footer {
+  font-size: 0.6em;
+  color: #777;
+}
+
+// Logo
+.reveal .slide-logo {
+  max-height: 50px !important;
+  margin: 0 !important;
+}
+
+// Two-column layout
+.columns {
+  margin-bottom: 1em;
+  
+  .column {
+    padding: 0 1em;
+    
+    &:first-child {
+      padding-left: 0;
+    }
+    
+    &:last-child {
+      padding-right: 0;
+    }
+  }
+}
+
+// Tables
+.reveal table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1em 0;
+  
+  th {
+    background-color: #f1f1f1;
+    font-weight: 600;
+    border-bottom: 2px solid #ddd;
+  }
+  
+  td, th {
+    padding: 0.5em;
+    border: 1px solid #ddd;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+}
