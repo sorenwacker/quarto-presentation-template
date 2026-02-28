@@ -48,15 +48,13 @@ summary = df.groupby("category").agg({"value": ["mean", "std"]})
 print(summary)
 ```
 
-### R
+### Bash
 
-```{r}
-#| echo: true
-#| eval: false
-library(tidyverse)
-
-df <- read_csv("data.csv")
-df |> group_by(category) |> summarise(mean = mean(value))
+```bash
+# Process data with command-line tools
+cat data.csv | \
+  awk -F',' 'NR>1 {sum[$1]+=$2; count[$1]++}
+  END {for (k in sum) print k, sum[k]/count[k]}'
 ```
 
 ## Mermaid Diagrams
