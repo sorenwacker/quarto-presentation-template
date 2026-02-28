@@ -49,11 +49,11 @@
     "text": "Callouts\n\n\n\n\n\n\nNote\n\n\nCallouts help important information stand out from the rest of your content.\n\n\n\n\n\n\n\n\n\nKeyboard Shortcuts\n\n\nPress F for fullscreen, O for overview, S for speaker notes.\n\n\n\n\n\n\n\n\n\nWarning\n\n\nAlways test your presentation in the browser you’ll use for presenting."
   },
   {
-    "objectID": "index.html#incremental-content",
-    "href": "index.html#incremental-content",
+    "objectID": "index.html#step-by-step-reveal",
+    "href": "index.html#step-by-step-reveal",
     "title": "Quarto Presentation Template",
-    "section": "Incremental Content",
-    "text": "Incremental Content\n\nPoints can appear one at a time\nBuilding up your argument\nKeeping audience attention\n\n\nUse . . . between any elements to create pauses."
+    "section": "Step-by-Step Reveal",
+    "text": "Step-by-Step Reveal\nContent can appear incrementally:\n\nFirst, introduce your concept\nThen, add supporting details\nFinally, summarize key points\n\nThis keeps your audience focused on one idea at a time."
   },
   {
     "objectID": "index.html#comparison-table",
