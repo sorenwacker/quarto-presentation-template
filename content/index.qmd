@@ -1,36 +1,104 @@
 ---
-title: "Professional Presentation"
-subtitle: "Creating Polished Slides with Quarto"
+title: "Quarto Presentation Template"
+subtitle: "A Starting Point for RevealJS Slides"
 author: "Your Name"
 date: today
 date-format: "MMMM D, YYYY"
 format:
   revealjs:
     theme: [default, custom.scss]
-    logo: "https://quarto.org/favicon.png"  # Use default Quarto logo or replace with your own
-    footer: "Your Organization | Professional Presentation"
+    logo: "fig/logo.svg"
+    footer: "Quarto Presentation Template"
     transition: slide
     slide-number: true
     preview-links: auto
-    code-fold: true
-    incremental: true
+    code-fold: false
+    incremental: false
     navigation-mode: vertical
     title-slide-attributes:
       data-background-color: "#2C3E50"
 editor: visual
 ---
 
-## Introduction
+## What This Template Includes
 
-::: {.incremental}
-- Professional presentations require **clear structure** and **visual appeal**
-- Quarto provides powerful tools for creating beautiful slides
-- This presentation will demonstrate key features
-:::
+- Custom logo and theming
+- Code blocks with syntax highlighting
+- Two-column layouts
+- Diagrams with Mermaid
+- Mathematical equations
+- Tables and callouts
+- Speaker notes
 
 ::: {.notes}
-Speaker notes go here. These are visible to you during the presentation but not to the audience.
+Press 'S' to open speaker view with notes and timer.
 :::
+
+## Code Examples
+
+### Python
+
+```{python}
+#| echo: true
+#| eval: false
+import pandas as pd
+
+df = pd.read_csv("data.csv")
+summary = df.groupby("category").agg({"value": ["mean", "std"]})
+print(summary)
+```
+
+### R
+
+```{r}
+#| echo: true
+#| eval: false
+library(tidyverse)
+
+df <- read_csv("data.csv")
+df |> group_by(category) |> summarise(mean = mean(value))
+```
+
+## Mermaid Diagrams
+
+```{mermaid}
+flowchart LR
+    A[Data Collection] --> B[Processing]
+    B --> C[Analysis]
+    C --> D[Visualization]
+    D --> E[Report]
+```
+
+## Architecture Diagram
+
+```{mermaid}
+flowchart TB
+    subgraph Frontend
+        A[Web App]
+        B[Mobile App]
+    end
+    subgraph Backend
+        C[API Server]
+        D[Database]
+    end
+    A --> C
+    B --> C
+    C --> D
+```
+
+## Mathematical Equations
+
+Inline math: The quadratic formula is $x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$
+
+Display math:
+
+$$
+\int_{-\infty}^{\infty} e^{-x^2} dx = \sqrt{\pi}
+$$
+
+$$
+\nabla \times \mathbf{E} = -\frac{\partial \mathbf{B}}{\partial t}
+$$
 
 ## Two-Column Layout
 
@@ -38,70 +106,77 @@ Speaker notes go here. These are visible to you during the presentation but not 
 
 ::: {.column width="50%"}
 ### Left Column
-- Content organized in columns
-- Makes efficient use of space
-- Perfect for comparisons
+
+- Organize content side by side
+- Compare options
+- Show before/after
+
 :::
 
 ::: {.column width="50%"}
 ### Right Column
-```{r}
-#| echo: true
-#| eval: true
-#| fig-width: 6
-#| fig-height: 4
 
-# Basic R plot
-x <- 1:10
-y <- x^2
-plot(x, y, type = "b", 
-     main = "Simple Plot",
-     xlab = "X", ylab = "Y")
-```
+| Metric | Value |
+|--------|-------|
+| Users  | 1,234 |
+| Growth | 15%   |
+| Score  | 4.8   |
+
 :::
 
 ::::
 
-## Visual Styling
+## Callouts
 
-You can enhance your text with different styles:
-
-- **Bold text** for emphasis
-- *Italic text* for subtle emphasis
-- <span style="color: blue;">Colored text</span> for visual cues
-- <span style="background-color: yellow;">Highlighted text</span> for important points
-
-## Important Information
-
-::: {.callout-important}
-### Key Point
-Always ensure your presentation is accessible and readable!
+::: {.callout-note}
+Use callouts to highlight important information.
 :::
 
 ::: {.callout-tip}
 ### Pro Tip
-Use consistent colors and fonts throughout your presentation.
+Press `F` for fullscreen mode during your presentation.
 :::
 
-## Tables and Lists
+::: {.callout-warning}
+Callouts can also indicate warnings or cautions.
+:::
 
-### Structured Data
+## Incremental Lists
 
-| Feature | Description | Benefit |
-|---------|-------------|---------|
-| Themes  | Pre-designed visual styles | Consistent look |
-| Layouts | Flexible content arrangement | Better organization |
-| Formats | Multiple output options | Adaptability |
+::: {.incremental}
+- First point appears
+- Then the second
+- Finally the third
+:::
 
-### Process Steps
+. . .
 
-1. Plan your content
-2. Structure your slides
-3. Apply professional styling
-4. Practice your delivery
+Use `. . .` to create pauses between any content.
 
-## Thank You!
+## Image with Caption
 
-### Contact Information
-- Email: your.email@example.com
-- Website: www.example.com
+![Placeholder image from picsum.photos](https://picsum.photos/600/300){fig-align="center"}
+
+## Tables
+
+| Feature | Basic | Pro | Enterprise |
+|---------|:-----:|:---:|:----------:|
+| Users   | 5     | 50  | Unlimited  |
+| Storage | 1 GB  | 10 GB | 100 GB   |
+| Support | Email | Chat | Dedicated |
+| Price   | Free  | $10 | $50        |
+
+## Thank You
+
+### Get Started
+
+1. Click **"Use this template"** on GitHub
+2. Clone your new repository
+3. Edit this file: `content/index.qmd`
+4. Run `make devel` to preview
+5. Run `make deploy` to publish
+
+### Resources
+
+- [Quarto RevealJS Guide](https://quarto.org/docs/presentations/revealjs/)
+- [Mermaid Diagrams](https://mermaid.js.org/)
