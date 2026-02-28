@@ -1,0 +1,79 @@
+[
+  {
+    "objectID": "index.html#what-this-template-includes",
+    "href": "index.html#what-this-template-includes",
+    "title": "Quarto Presentation Template",
+    "section": "What This Template Includes",
+    "text": "What This Template Includes\n\nCustom logo and theming\nCode blocks with syntax highlighting\nTwo-column layouts\nDiagrams with Mermaid\nMathematical equations\nTables and callouts\nSpeaker notes\n\n\nPress ‘S’ to open speaker view with notes and timer."
+  },
+  {
+    "objectID": "index.html#code-examples",
+    "href": "index.html#code-examples",
+    "title": "Quarto Presentation Template",
+    "section": "Code Examples",
+    "text": "Code Examples\nPython\n\nimport pandas as pd\n\ndf = pd.read_csv(\"data.csv\")\nsummary = df.groupby(\"category\").agg({\"value\": [\"mean\", \"std\"]})\nprint(summary)\n\nBash\n# Process data with command-line tools\ncat data.csv | \\\n  awk -F',' 'NR&gt;1 {sum[$1]+=$2; count[$1]++}\n  END {for (k in sum) print k, sum[k]/count[k]}'"
+  },
+  {
+    "objectID": "index.html#mermaid-diagrams",
+    "href": "index.html#mermaid-diagrams",
+    "title": "Quarto Presentation Template",
+    "section": "Mermaid Diagrams",
+    "text": "Mermaid Diagrams\n\n\n\n\n\nflowchart LR\n    A[Data Collection] --&gt; B[Processing]\n    B --&gt; C[Analysis]\n    C --&gt; D[Visualization]\n    D --&gt; E[Report]"
+  },
+  {
+    "objectID": "index.html#architecture-diagram",
+    "href": "index.html#architecture-diagram",
+    "title": "Quarto Presentation Template",
+    "section": "Architecture Diagram",
+    "text": "Architecture Diagram\n\n\n\n\n\nflowchart TB\n    subgraph Frontend\n        A[Web App]\n        B[Mobile App]\n    end\n    subgraph Backend\n        C[API Server]\n        D[Database]\n    end\n    A --&gt; C\n    B --&gt; C\n    C --&gt; D"
+  },
+  {
+    "objectID": "index.html#mathematical-equations",
+    "href": "index.html#mathematical-equations",
+    "title": "Quarto Presentation Template",
+    "section": "Mathematical Equations",
+    "text": "Mathematical Equations\nInline math: The quadratic formula is \\(x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}\\)\nDisplay math:\n\\[\n\\int_{-\\infty}^{\\infty} e^{-x^2} dx = \\sqrt{\\pi}\n\\]\n\\[\n\\nabla \\times \\mathbf{E} = -\\frac{\\partial \\mathbf{B}}{\\partial t}\n\\]"
+  },
+  {
+    "objectID": "index.html#two-column-layout",
+    "href": "index.html#two-column-layout",
+    "title": "Quarto Presentation Template",
+    "section": "Two-Column Layout",
+    "text": "Two-Column Layout\n\n\nLeft Column\n\nOrganize content side by side\nCompare options\nShow before/after\n\n\nRight Column\n\n\n\nMetric\nValue\n\n\n\n\nUsers\n1,234\n\n\nGrowth\n15%\n\n\nScore\n4.8"
+  },
+  {
+    "objectID": "index.html#callouts",
+    "href": "index.html#callouts",
+    "title": "Quarto Presentation Template",
+    "section": "Callouts",
+    "text": "Callouts\n\n\n\n\n\n\nNote\n\n\nUse callouts to highlight important information.\n\n\n\n\n\n\n\n\n\nPro Tip\n\n\nPress F for fullscreen mode during your presentation.\n\n\n\n\n\n\n\n\n\nWarning\n\n\nCallouts can also indicate warnings or cautions."
+  },
+  {
+    "objectID": "index.html#incremental-lists",
+    "href": "index.html#incremental-lists",
+    "title": "Quarto Presentation Template",
+    "section": "Incremental Lists",
+    "text": "Incremental Lists\n\nFirst point appears\nThen the second\nFinally the third\n\n\nUse . . . to create pauses between any content."
+  },
+  {
+    "objectID": "index.html#image-with-caption",
+    "href": "index.html#image-with-caption",
+    "title": "Quarto Presentation Template",
+    "section": "Image with Caption",
+    "text": "Image with Caption\n\nPlaceholder image from picsum.photos"
+  },
+  {
+    "objectID": "index.html#tables",
+    "href": "index.html#tables",
+    "title": "Quarto Presentation Template",
+    "section": "Tables",
+    "text": "Tables\n\n\n\nFeature\nBasic\nPro\nEnterprise\n\n\n\n\nUsers\n5\n50\nUnlimited\n\n\nStorage\n1 GB\n10 GB\n100 GB\n\n\nSupport\nEmail\nChat\nDedicated\n\n\nPrice\nFree\n$10\n$50"
+  },
+  {
+    "objectID": "index.html#thank-you",
+    "href": "index.html#thank-you",
+    "title": "Quarto Presentation Template",
+    "section": "Thank You",
+    "text": "Thank You\nGet Started\n\nClick “Use this template” on GitHub\nClone your new repository\nEdit this file: content/index.qmd\nRun make devel to preview\nRun make deploy to publish\n\nResources\n\nQuarto RevealJS Guide\nMermaid Diagrams"
+  }
+]

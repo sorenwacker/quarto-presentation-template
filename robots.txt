@@ -1,0 +1,1 @@
+Sitemap: https://sorenwacker.github.io/quarto-presentation-template/sitemap.xml
