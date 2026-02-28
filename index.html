@@ -277,32 +277,22 @@ Your Name
 </div>
 </div>
 </section>
-<section id="system-architecture" class="slide level2">
-<h2>System Architecture</h2>
-<div class="cell" data-reveal="true" data-fig-width="8" data-layout-align="default">
+<section id="sequence-diagram" class="slide level2">
+<h2>Sequence Diagram</h2>
+<div class="cell" data-reveal="true" data-layout-align="default">
 <div class="cell-output-display">
 <div>
 <p></p><figure class=""><p></p>
 <div>
-<pre class="mermaid mermaid-js">flowchart TB
-    subgraph Client
-        A[Browser]
-        B[Mobile App]
-    end
-    subgraph Services
-        C[API Gateway]
-        D[Auth Service]
-        E[Core API]
-    end
-    subgraph Data
-        F[(PostgreSQL)]
-        G[(Redis)]
-    end
-    A &amp; B --&gt; C
-    C --&gt; D
-    C --&gt; E
-    E --&gt; F
-    E --&gt; G
+<pre class="mermaid mermaid-js">sequenceDiagram
+    participant U as User
+    participant A as API
+    participant D as Database
+
+    U-&gt;&gt;A: Request data
+    A-&gt;&gt;D: Query
+    D--&gt;&gt;A: Results
+    A--&gt;&gt;U: JSON response
 </pre>
 </div>
 <p></p></figure><p></p>

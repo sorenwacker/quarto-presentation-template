@@ -21,11 +21,11 @@
     "text": "Data Pipeline\n\n\n\n\n\nflowchart LR\n    A[Source Data] --&gt; B[Extract]\n    B --&gt; C[Transform]\n    C --&gt; D[Load]\n    D --&gt; E[(Data Warehouse)]\n    E --&gt; F[Analytics]\n    E --&gt; G[Dashboards]"
   },
   {
-    "objectID": "index.html#system-architecture",
-    "href": "index.html#system-architecture",
+    "objectID": "index.html#sequence-diagram",
+    "href": "index.html#sequence-diagram",
     "title": "Quarto Presentation Template",
-    "section": "System Architecture",
-    "text": "System Architecture\n\n\n\n\n\nflowchart TB\n    subgraph Client\n        A[Browser]\n        B[Mobile App]\n    end\n    subgraph Services\n        C[API Gateway]\n        D[Auth Service]\n        E[Core API]\n    end\n    subgraph Data\n        F[(PostgreSQL)]\n        G[(Redis)]\n    end\n    A & B --&gt; C\n    C --&gt; D\n    C --&gt; E\n    E --&gt; F\n    E --&gt; G"
+    "section": "Sequence Diagram",
+    "text": "Sequence Diagram\n\n\n\n\n\nsequenceDiagram\n    participant U as User\n    participant A as API\n    participant D as Database\n\n    U-&gt;&gt;A: Request data\n    A-&gt;&gt;D: Query\n    D--&gt;&gt;A: Results\n    A--&gt;&gt;U: JSON response"
   },
   {
     "objectID": "index.html#mathematics",
