@@ -1,162 +1,311 @@
 /*-- scss:defaults --*/
-// Import fonts
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
 
-// Colors
-$body-bg: #fff;
-$body-color: #333;
-$link-color: #0072B2;
-$selection-bg: #0072B2;
+// Color palette
+$primary: #2563eb;
+$primary-dark: #1e40af;
+$secondary: #0f172a;
+$accent: #06b6d4;
+$success: #10b981;
+$warning: #f59e0b;
+$danger: #ef4444;
 
-// Fonts
-$font-family-sans-serif: 'Source Sans Pro', sans-serif;
-$presentation-heading-font: 'Montserrat', sans-serif;
-$presentation-heading-color: #2C3E50;
-$presentation-font-size-root: 28px;
+// Base colors
+$body-bg: #ffffff;
+$body-color: #334155;
+$link-color: $primary;
+$selection-bg: rgba($primary, 0.2);
 
-// Slide
+// Typography
+$font-family-sans-serif: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+$font-family-monospace: 'JetBrains Mono', 'Fira Code', monospace;
+$presentation-heading-font: 'Inter', sans-serif;
+$presentation-heading-color: $secondary;
+$presentation-font-size-root: 30px;
+$presentation-line-height: 1.6;
+
+// Slide settings
 $presentation-slide-text-align: left;
 $presentation-title-slide-text-align: left;
-$border-color: #dee2e6;
-$code-block-bg: #f8f9fa;
+$border-color: #e2e8f0;
+$code-block-bg: #f8fafc;
+$code-color: $secondary;
 
 /*-- scss:rules --*/
 
-// Custom classes
-.text-red {
-  color: #E64A19 !important;
+// Base slide styling
+.reveal .slides section {
+  padding: 40px 60px;
 }
 
-.bg-yellow {
-  background-color: rgba(255, 222, 89, 0.3);
-  padding: 0 0.2em;
-  border-radius: 4px;
-}
-
-.underline {
-  text-decoration: underline;
-  text-decoration-thickness: 2px;
-  text-decoration-color: $link-color;
-}
-
-// Section headings
+// Headings
 .reveal h1 {
   font-weight: 700;
-  margin-bottom: 0.5em;
+  font-size: 2.2em;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.6em;
 }
 
 .reveal h2 {
   font-weight: 600;
-  margin-bottom: 0.5em;
-  border-bottom: 1px solid $border-color;
-  padding-bottom: 0.2em;
+  font-size: 1.6em;
+  letter-spacing: -0.01em;
+  color: $secondary;
+  margin-bottom: 0.8em;
+  padding-bottom: 0.4em;
+  border-bottom: 3px solid $primary;
+  display: inline-block;
 }
 
 .reveal h3 {
-  font-weight: 500;
-  color: #3a6ea5;
+  font-weight: 600;
+  font-size: 1.1em;
+  color: $primary-dark;
+  margin-bottom: 0.5em;
 }
 
 // Title slide
 #title-slide {
+  text-align: left !important;
+
   .title {
-    font-size: 2.5em;
+    font-size: 2.8em;
     font-weight: 700;
-    color: white;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    color: #fff;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    margin-bottom: 0.2em;
   }
-  
+
   .subtitle {
-    font-size: 1.5em;
-    color: white;
+    font-size: 1.4em;
+    color: rgba(255, 255, 255, 0.9);
     font-weight: 400;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    margin-bottom: 1.5em;
   }
-  
-  .author, .date {
-    color: white;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+
+  .author {
+    font-size: 1.1em;
+    color: rgba(255, 255, 255, 0.85);
+    font-weight: 500;
+  }
+
+  .date {
+    font-size: 0.95em;
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: 0.5em;
   }
 }
 
-// Callout boxes
-.callout {
-  border-radius: 4px;
-  padding: 1em;
-  margin-bottom: 1em;
+// Lists
+.reveal ul, .reveal ol {
+  margin-left: 0;
+
+  li {
+    margin-bottom: 0.4em;
+    padding-left: 0.3em;
+  }
 }
 
-.callout-important {
-  background-color: #f8d7da;
-  border-left: 5px solid #dc3545;
-  
-  h3 {
-    color: #721c24;
-    margin-top: 0;
+.reveal ul li::marker {
+  color: $primary;
+}
+
+// Links
+.reveal a {
+  color: $primary;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease;
+
+  &:hover {
+    border-bottom-color: $primary;
   }
 }
 
 // Code blocks
 .reveal pre {
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  border-radius: 4px;
-}
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  border-radius: 8px;
+  padding: 1em 1.2em;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 
-// Quotes
-blockquote {
-  border-left: 5px solid #0072B2;
-  padding-left: 1em;
-  font-style: italic;
-  color: #555;
-}
-
-// Footer
-.reveal .footer {
-  font-size: 0.6em;
-  color: #777;
-}
-
-// Logo
-.reveal .slide-logo {
-  max-height: 50px !important;
-  margin: 0 !important;
-}
-
-// Two-column layout
-.columns {
-  margin-bottom: 1em;
-  
-  .column {
-    padding: 0 1em;
-    
-    &:first-child {
-      padding-left: 0;
-    }
-    
-    &:last-child {
-      padding-right: 0;
-    }
+  code {
+    color: #e2e8f0;
+    font-size: 0.85em;
+    line-height: 1.5;
   }
+}
+
+.reveal code {
+  font-family: $font-family-monospace;
+  background: rgba($primary, 0.08);
+  color: $primary-dark;
+  padding: 0.15em 0.4em;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+.reveal pre code {
+  background: transparent;
+  padding: 0;
+}
+
+// Callouts
+.reveal .callout {
+  border-radius: 8px;
+  padding: 1em 1.2em;
+  margin: 1em 0;
+  border: none;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.reveal .callout-note {
+  background: linear-gradient(135deg, rgba($primary, 0.08) 0%, rgba($primary, 0.04) 100%);
+  border-left: 4px solid $primary;
+}
+
+.reveal .callout-tip {
+  background: linear-gradient(135deg, rgba($success, 0.08) 0%, rgba($success, 0.04) 100%);
+  border-left: 4px solid $success;
+}
+
+.reveal .callout-warning {
+  background: linear-gradient(135deg, rgba($warning, 0.08) 0%, rgba($warning, 0.04) 100%);
+  border-left: 4px solid $warning;
+}
+
+.reveal .callout-important {
+  background: linear-gradient(135deg, rgba($danger, 0.08) 0%, rgba($danger, 0.04) 100%);
+  border-left: 4px solid $danger;
+}
+
+.reveal .callout-title {
+  font-weight: 600;
+  margin-bottom: 0.3em;
 }
 
 // Tables
 .reveal table {
   width: 100%;
-  border-collapse: collapse;
+  border-collapse: separate;
+  border-spacing: 0;
   margin: 1em 0;
-  
+  font-size: 0.9em;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+
   th {
-    background-color: #f1f1f1;
+    background: $secondary;
+    color: #fff;
     font-weight: 600;
-    border-bottom: 2px solid #ddd;
+    padding: 0.8em 1em;
+    text-align: left;
   }
-  
-  td, th {
-    padding: 0.5em;
-    border: 1px solid #ddd;
+
+  td {
+    padding: 0.7em 1em;
+    border-bottom: 1px solid $border-color;
   }
-  
+
+  tr:last-child td {
+    border-bottom: none;
+  }
+
   tr:nth-child(even) {
-    background-color: #f9f9f9;
+    background: #f8fafc;
+  }
+
+  tr:hover {
+    background: rgba($primary, 0.04);
+  }
+}
+
+// Two-column layout
+.reveal .columns {
+  display: flex;
+  gap: 2em;
+
+  .column {
+    flex: 1;
+  }
+}
+
+// Blockquotes
+.reveal blockquote {
+  background: #f8fafc;
+  border-left: 4px solid $primary;
+  border-radius: 0 8px 8px 0;
+  padding: 1em 1.5em;
+  margin: 1em 0;
+  font-style: italic;
+  color: #64748b;
+
+  p {
+    margin: 0;
+  }
+}
+
+// Footer and logo
+.reveal .footer {
+  font-size: 0.55em;
+  color: #94a3b8;
+  letter-spacing: 0.02em;
+}
+
+.reveal .slide-logo {
+  max-height: 45px !important;
+}
+
+// Progress bar
+.reveal .progress {
+  height: 4px;
+  background: rgba($primary, 0.1);
+
+  span {
+    background: linear-gradient(90deg, $primary 0%, $accent 100%);
+  }
+}
+
+// Slide number
+.reveal .slide-number {
+  font-size: 0.6em;
+  color: #94a3b8;
+  background: transparent;
+}
+
+// Mermaid diagrams
+.mermaid {
+  background: transparent !important;
+}
+
+// Images
+.reveal img {
+  border-radius: 8px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.reveal figure {
+  margin: 1em 0;
+}
+
+.reveal figcaption {
+  font-size: 0.8em;
+  color: #64748b;
+  margin-top: 0.5em;
+}
+
+// Incremental animations
+.reveal .slides section .fragment {
+  transition: all 0.3s ease;
+}
+
+// Print styles
+@media print {
+  .reveal pre {
+    box-shadow: none;
+    border: 1px solid #e2e8f0;
   }
 }

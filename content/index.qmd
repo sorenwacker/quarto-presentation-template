@@ -1,6 +1,6 @@
 ---
 title: "Quarto Presentation Template"
-subtitle: "A Starting Point for RevealJS Slides"
+subtitle: "Modern slides with code, diagrams, and math"
 author: "Your Name"
 date: today
 date-format: "MMMM D, YYYY"
@@ -9,117 +9,127 @@ format:
     theme: [default, custom.scss]
     logo: "fig/logo.svg"
     footer: "Quarto Presentation Template"
-    transition: slide
-    slide-number: true
+    transition: fade
+    transition-speed: fast
+    slide-number: c/t
     preview-links: auto
     code-fold: false
     incremental: false
-    navigation-mode: vertical
+    highlight-style: github-dark
     title-slide-attributes:
-      data-background-color: "#2C3E50"
+      data-background-gradient: "linear-gradient(135deg, #1e40af 0%, #0f172a 100%)"
 editor: visual
 ---
 
-## What This Template Includes
+## Features
 
-- Custom logo and theming
-- Code blocks with syntax highlighting
-- Two-column layouts
-- Diagrams with Mermaid
-- Mathematical equations
-- Tables and callouts
+This template includes everything you need for technical presentations:
+
+- Modern styling with Inter font
+- Syntax-highlighted code blocks
+- Mermaid diagrams
+- LaTeX math equations
+- Responsive tables
+- Callout boxes
 - Speaker notes
 
 ::: {.notes}
-Press 'S' to open speaker view with notes and timer.
+Press **S** to open speaker view with notes and timer.
 :::
 
-## Code Examples
+## Code Blocks
 
-### Python
-
-```{python}
-#| echo: true
-#| eval: false
+```python
 import pandas as pd
+import matplotlib.pyplot as plt
 
+# Load and process data
 df = pd.read_csv("data.csv")
-summary = df.groupby("category").agg({"value": ["mean", "std"]})
-print(summary)
+summary = df.groupby("category").agg({
+    "value": ["mean", "std", "count"]
+})
+
+# Visualize results
+summary.plot(kind="bar", figsize=(10, 6))
+plt.title("Category Summary")
+plt.tight_layout()
+plt.savefig("output.png")
 ```
 
-### Bash
-
-```bash
-# Process data with command-line tools
-cat data.csv | \
-  awk -F',' 'NR>1 {sum[$1]+=$2; count[$1]++}
-  END {for (k in sum) print k, sum[k]/count[k]}'
-```
-
-## Mermaid Diagrams
+## Data Pipeline
 
 ```{mermaid}
+%%| fig-width: 9
 flowchart LR
-    A[Data Collection] --> B[Processing]
-    B --> C[Analysis]
-    C --> D[Visualization]
-    D --> E[Report]
+    A[Source Data] --> B[Extract]
+    B --> C[Transform]
+    C --> D[Load]
+    D --> E[(Data Warehouse)]
+    E --> F[Analytics]
+    E --> G[Dashboards]
 ```
 
-## Architecture Diagram
+## System Architecture
 
 ```{mermaid}
+%%| fig-width: 8
 flowchart TB
-    subgraph Frontend
-        A[Web App]
+    subgraph Client
+        A[Browser]
         B[Mobile App]
     end
-    subgraph Backend
-        C[API Server]
-        D[Database]
+    subgraph Services
+        C[API Gateway]
+        D[Auth Service]
+        E[Core API]
     end
-    A --> C
-    B --> C
+    subgraph Data
+        F[(PostgreSQL)]
+        G[(Redis)]
+    end
+    A & B --> C
     C --> D
+    C --> E
+    E --> F
+    E --> G
 ```
 
-## Mathematical Equations
+## Mathematics
 
-Inline math: The quadratic formula is $x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$
+Inline equations work naturally: $E = mc^2$
 
-Display math:
-
-$$
-\int_{-\infty}^{\infty} e^{-x^2} dx = \sqrt{\pi}
-$$
+Display equations for complex formulas:
 
 $$
-\nabla \times \mathbf{E} = -\frac{\partial \mathbf{B}}{\partial t}
+\mathcal{L} = -\frac{1}{4}F_{\mu\nu}F^{\mu\nu} + \bar{\psi}(i\gamma^\mu D_\mu - m)\psi
 $$
 
-## Two-Column Layout
+$$
+P(A|B) = \frac{P(B|A) \cdot P(A)}{P(B)}
+$$
+
+## Two Columns
 
 :::: {.columns}
 
 ::: {.column width="50%"}
-### Left Column
+### Benefits
 
-- Organize content side by side
-- Compare options
-- Show before/after
-
+- Side-by-side comparisons
+- Text alongside visuals
+- Efficient use of space
+- Clear organization
 :::
 
 ::: {.column width="50%"}
-### Right Column
+### Metrics
 
 | Metric | Value |
-|--------|-------|
-| Users  | 1,234 |
-| Growth | 15%   |
-| Score  | 4.8   |
-
+|--------|------:|
+| Users | 12,450 |
+| Sessions | 45,230 |
+| Conversion | 3.2% |
+| Revenue | $84K |
 :::
 
 ::::
@@ -127,54 +137,64 @@ $$
 ## Callouts
 
 ::: {.callout-note}
-Use callouts to highlight important information.
+Callouts help important information stand out from the rest of your content.
 :::
 
 ::: {.callout-tip}
-### Pro Tip
-Press `F` for fullscreen mode during your presentation.
+### Keyboard Shortcuts
+Press **F** for fullscreen, **O** for overview, **S** for speaker notes.
 :::
 
 ::: {.callout-warning}
-Callouts can also indicate warnings or cautions.
+Always test your presentation in the browser you'll use for presenting.
 :::
 
-## Incremental Lists
+## Incremental Content
 
 ::: {.incremental}
-- First point appears
-- Then the second
-- Finally the third
+- Points can appear one at a time
+- Building up your argument
+- Keeping audience attention
 :::
 
 . . .
 
-Use `. . .` to create pauses between any content.
+Use `. . .` between any elements to create pauses.
 
-## Image with Caption
-
-![Placeholder image from picsum.photos](https://picsum.photos/600/300){fig-align="center"}
-
-## Tables
+## Comparison Table
 
 | Feature | Basic | Pro | Enterprise |
 |---------|:-----:|:---:|:----------:|
-| Users   | 5     | 50  | Unlimited  |
-| Storage | 1 GB  | 10 GB | 100 GB   |
-| Support | Email | Chat | Dedicated |
-| Price   | Free  | $10 | $50        |
+| Projects | 3 | 25 | Unlimited |
+| Storage | 1 GB | 50 GB | 500 GB |
+| API Access | - | Limited | Full |
+| Support | Community | Email | Dedicated |
+| SSO | - | - | Yes |
 
-## Thank You
+## Images
 
-### Get Started
+![Sample visualization from Unsplash](https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=400&fit=crop){fig-align="center"}
 
-1. Click **"Use this template"** on GitHub
-2. Clone your new repository
-3. Edit this file: `content/index.qmd`
+## Quotes
+
+> The best way to predict the future is to invent it.
+>
+> --- Alan Kay
+
+Use blockquotes for citations, testimonials, or emphasis.
+
+## Get Started
+
+### Quick Setup
+
+1. Click **Use this template** on GitHub
+2. Clone your repository locally
+3. Edit `content/index.qmd`
 4. Run `make devel` to preview
 5. Run `make deploy` to publish
 
 ### Resources
 
-- [Quarto RevealJS Guide](https://quarto.org/docs/presentations/revealjs/)
-- [Mermaid Diagrams](https://mermaid.js.org/)
+- [Quarto RevealJS Docs](https://quarto.org/docs/presentations/revealjs/)
+- [Mermaid Diagram Syntax](https://mermaid.js.org/)
+- [LaTeX Math Reference](https://katex.org/docs/supported.html)
