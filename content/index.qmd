@@ -69,29 +69,18 @@ flowchart LR
     E --> G[Dashboards]
 ```
 
-## System Architecture
+## Sequence Diagram
 
 ```{mermaid}
-%%| fig-width: 8
-flowchart TB
-    subgraph Client
-        A[Browser]
-        B[Mobile App]
-    end
-    subgraph Services
-        C[API Gateway]
-        D[Auth Service]
-        E[Core API]
-    end
-    subgraph Data
-        F[(PostgreSQL)]
-        G[(Redis)]
-    end
-    A & B --> C
-    C --> D
-    C --> E
-    E --> F
-    E --> G
+sequenceDiagram
+    participant U as User
+    participant A as API
+    participant D as Database
+
+    U->>A: Request data
+    A->>D: Query
+    D-->>A: Results
+    A-->>U: JSON response
 ```
 
 ## Mathematics
