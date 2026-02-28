@@ -138,17 +138,17 @@ Press **F** for fullscreen, **O** for overview, **S** for speaker notes.
 Always test your presentation in the browser you'll use for presenting.
 :::
 
-## Incremental Content
+## Step-by-Step Reveal
+
+Content can appear incrementally:
 
 ::: {.incremental}
-- Points can appear one at a time
-- Building up your argument
-- Keeping audience attention
+- First, introduce your concept
+- Then, add supporting details
+- Finally, summarize key points
 :::
 
-. . .
-
-Use `. . .` between any elements to create pauses.
+This keeps your audience focused on one idea at a time.
 
 ## Comparison Table
 
